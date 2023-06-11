@@ -5,16 +5,47 @@ Centro de Investigación Coppel
 
 El objetivo de este problema es desarrollar un modelo de contactabilidad que asocie una probabilidad de contacto a cada cliente en función de ciertos segmentos horarios. Para resolver este problema, se utilizará el archivo `20210513_Challenge_AA.csv`, que contiene información sociodemográfica y transaccional de los clientes.
 
-A continuación, se presenta una rutina para abordar este desafío:
+# Estrategia para el Problema UNO
 
-1-2. **Carga de los datos del archivo .csv/ Selección del horario de preferenci:** Inicialmente, se debe cargar el archivo "20210513_Challenge_AA.csv" para obtener los datos necesarios. Sin embargo, debido al tamaño del archivo, es necesario dividirlo en sub-archivos más pequeños para llevar a cabo el proceso ETL en cada uno de ellos. Además, se puede aprovechar la necesidad de seleccionar el horario de interés para trabajar con él en el modelo y dividir el archivo en sub-archivos correspondientes a sus respectivos horarios. Esto implica realizar un filtro adecuado para quedarse únicamente con los registros que pertenecen a ese horario.
+El objetivo del problema UNO es desarrollar un modelo de contactabilidad que asocie una probabilidad de contacto a cada cliente en función de ciertos segmentos horarios. Para abordar este desafío y cumplir con los puntos requeridos, se propone la siguiente estrategia utilizando las mejores prácticas de Machine Learning y Data Science:
 
-También se puede considerar el uso de una solución de Big Data como Hadoop Hive si las velocidades de consulta y modificación son un problema. Hadoop Hive ofrece capacidades de procesamiento distribuido y escalabilidad para manejar grandes volúmenes de datos.
+## Carga y preparación de los datos:
+1. Se cargan los datos del archivo "20210513_Challenge_AA.csv" utilizando las bibliotecas de manipulación de datos, como pandas, y se examina su estructura y contenido.
+2. Se selecciona el horario de preferencia para trabajar en el modelo y se realiza el filtro adecuado para quedarse únicamente con los registros correspondientes a ese horario.
+3. Se realiza una exploración inicial de los datos para comprender la dimensión del nuevo conjunto de datos, incluyendo el número de filas y columnas, los nombres de las variables y una descripción general de los datos.
 
-Posteriormente, se realizarán los pasos comunes de un proceso ETL estándar, que incluyen la detección de valores nulos, la detección de registros duplicados y la detección de valores atípicos (outliers). Estos pasos implican registrar los cambios realizados en un archivo llamado "registro_cambios.csv", donde se indicarán los valores modificados y se describirá el cambio realizado.
+## Análisis y preparación de los datos:
+4. Se realiza un análisis detallado de los datos, incluyendo la identificación del número de observaciones, valores perdidos y valores NA en el conjunto de datos filtrado.
+5. Se calculan y se presentan los detalles estadísticos básicos, como el promedio, los percentiles, las desviaciones estándar, los valores mínimos y máximos, y la mediana, con el fin de comprender la distribución y las características de las variables relevantes para el modelo.
 
-Es importante tener en cuenta que estos pasos forman parte de un proceso ETL estándar, pero la implementación exacta puede variar según el contexto y los requisitos específicos de los datos.
+## Análisis exploratorio de datos:
+6. Se elabora un programa para crear un gráfico que proporcione una estadística general de los datos, visualizando diferentes características relevantes y patrones en el conjunto de datos.
+7. Se elabora un programa para crear un gráfico de barras que muestre la frecuencia de las categorías de las variables continuas, lo que permite identificar posibles sesgos o desequilibrios en los datos.
 
-3-15. **Indica la dimensión del nuevo fichero, número de filas y columnas, nombres de las
-variables y descripción de los datos, Obtén el número de observaciones, valores perdidos, valores NA, Expresa los detalles estadísticos básicos: promedio..**
+## Análisis de correlaciones:
+8. Se realiza un análisis de correlaciones entre las variables para identificar aquellas que sean linealmente dependientes. Se establece un criterio para determinar los niveles altos y bajos de correlación, lo que permite identificar las relaciones más fuertes y descartar variables redundantes.
 
+## Determinación de factores influyentes:
+9. Se utilizan diferentes criterios, como el Valor de Información (Information Value) y el Peso de la Evidencia (Weight of Evidence), para determinar los factores influyentes con respecto al objetivo. Se enumera y clasifica estos factores de mayor a menor según su nivel de influencia sobre la variable objetivo.
+
+## Construcción de nuevas variables:
+10. Con base en los resultados anteriores, se construyen al menos cinco nuevas variables que posean buen poder predictivo con respecto a la variable objetivo. Estas variables se crean utilizando técnicas como la combinación de variables existentes, la ingeniería de características y la transformación de variables para capturar información relevante.
+
+## Preparación de conjuntos de entrenamiento y validación:
+11. Se divide el conjunto de datos en conjuntos de entrenamiento y validación utilizando un porcentaje adecuado para cada conjunto. Se justifica el porcentaje utilizado en función del tamaño del conjunto de datos, el equilibrio de clases y las necesidades específicas del modelo.
+
+## Propuestas de modelos de clasificación:
+12. Se elaboran al menos
+
+ tres propuestas de modelos de clasificación utilizando las variables seleccionadas y construidas previamente. Se justifican las propuestas basándose en la relevancia de las variables, la capacidad del modelo para capturar relaciones complejas y la interpretabilidad de los resultados.
+
+## Evaluación de modelos y selección del ganador:
+13. Se evalúan las métricas correspondientes en los conjuntos de entrenamiento y validación para cada propuesta de modelo. Se selecciona un modelo ganador en función del rendimiento y la adecuación a los objetivos del problema. Se justifica el uso de las métricas utilizadas y la elección del modelo preferido.
+
+## Implementación del modelo ganador:
+14. Se explica cómo se visualiza la implementación del modelo ganador en un entorno de producción. Esto implica considerar aspectos como la escalabilidad, la eficiencia y la facilidad de mantenimiento del modelo en producción.
+
+## Informe ejecutivo:
+15. El proyecto se elaborara en jupyter en preparacion como informe tecnico que detalle cada uno de los puntos de la estrategia, desde la carga de datos hasta la presentación de resultados y la implementación del modelo. El informe se entrega en formato PDF e incluye el código utilizado, los resultados obtenidos, las conclusiones y las recomendaciones para futuros desarrollos.
+
+Con esta estrategia, se abordan todos los puntos del problema UNO, siguiendo las mejores prácticas de Machine Learning y Data Science. Se asegura la calidad de los datos, se exploran las relaciones y las características relevantes, se construyen variables predictivas, se entrenan modelos de clasificación y se selecciona el mejor modelo para su implementación. El informe ejecutivo proporciona una visión general de todo el proceso y los resultados obtenidos.
