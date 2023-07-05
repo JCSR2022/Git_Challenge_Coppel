@@ -1,3 +1,6 @@
+<img src="data/Oferta-de-Trabajo-Coppel.png">
+
+
 # Challenge Analítica Avanzada e Inteligencia Artificial
 Centro de Investigación Coppel
 
